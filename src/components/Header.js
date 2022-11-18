@@ -7,7 +7,8 @@ const Header = () => {
   return (
     <MainHeader>
       <NavLink to="/">
-        <img src="./images/logo.png" alt="my logo img" />
+        {/* <img src="./images/logo.png" alt="my logo img" /> */}
+        <span className="logo">Ecommerce</span>
       </NavLink>
       <Nav />
     </MainHeader>
@@ -24,7 +25,9 @@ const MainHeader = styled.header`
   position: relative;
 
   .logo {
-    height: 5rem;
+   font-size:4.5rem;
+   font-weight:500;
+   text-transform: capitalize
   }
 `;
 export default Header;

@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const PageNavigation = ({ title }) => {
+  console.log(title);
   return (
     <Wrapper>
-      {/* <NavLink to="/">Home</NavLink>/Ecommerce */}
+      <NavLink to="/Ecommerce/">Home</NavLink>/{title}
     </Wrapper>
   );
 };

@@ -4,6 +4,7 @@ import ProductList from "./components/ProductList";
 import Sort from "./components/Sort";
 
 const Products = () => {
+  document.title = "Ecommerce | Products"
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">

@@ -4,6 +4,8 @@ import Services from "./components/Services";
 import Trusted from "./components/Trusted";
 
 const Home = () => {
+document.title = "Ecommerce | Home"
+
   const data = {
     name: "Atul store",
   };

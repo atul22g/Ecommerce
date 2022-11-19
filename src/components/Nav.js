@@ -169,7 +169,7 @@ const Nav = () => {
         <ul className="navbar-lists">
           <li>
             <NavLink
-              to="/"
+              to="/Ecommerce/"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
               Home
@@ -177,7 +177,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/about"
+              to="/Ecommerce/about"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
               About
@@ -185,7 +185,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/products"
+              to="/Ecommerce/products"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
               Products
@@ -193,14 +193,14 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/contact"
+              to="/Ecommerce/contact"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink to="/cart" className="navbar-link cart-trolley--link">
+            <NavLink to="/Ecommerce/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>

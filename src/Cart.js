@@ -6,6 +6,7 @@ import { Button } from "./styles/Button";
 import FormatPrice from "./Helpers/FormatPrice";
 
 const Cart = () => {
+  document.title = "Ecommerce | Cart"
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
 
   if (cart.length === 0) {

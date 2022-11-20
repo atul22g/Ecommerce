@@ -10,13 +10,16 @@ import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
+import { useLocation } from "react-router-dom";
 
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
+  const search = useLocation().search;
+  const query = new URLSearchParams(search).get("key");
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
-
+  console.log(query);
   const { id } = useParams();
 
   const {
@@ -38,10 +41,11 @@ const SingleProduct = () => {
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
   }
+  document.title = `Ecommerce | ${query}`;
 
   return (
     <Wrapper>
-      <PageNavigation title={name} />
+      <PageNavigation title={name} key={alias} />
       <Container className="container">
         <div className="grid grid-two-column">
           {/* product Images  */}

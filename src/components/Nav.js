@@ -4,10 +4,13 @@ import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { useCartContext } from "../context/cart_context";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "../styles/Button";
 
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   const Nav = styled.nav`
     .navbar-lists {
@@ -171,7 +174,8 @@ const Nav = () => {
             <NavLink
               to="/Ecommerce/"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               Home
             </NavLink>
           </li>
@@ -179,7 +183,8 @@ const Nav = () => {
             <NavLink
               to="/Ecommerce/about"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               About
             </NavLink>
           </li>
@@ -187,7 +192,8 @@ const Nav = () => {
             <NavLink
               to="/Ecommerce/products"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               Products
             </NavLink>
           </li>
@@ -195,12 +201,29 @@ const Nav = () => {
             <NavLink
               to="/Ecommerce/contact"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               Contact
             </NavLink>
           </li>
+
+          {isAuthenticated ? (
+            <li>
+              <Button
+                onClick={() => logout({ returnTo: window.location.origin })}>
+                Log Out
+              </Button>
+            </li>
+          ) : (
+            <li>
+              <Button onClick={() => loginWithRedirect()}>Log In</Button>
+            </li>
+          )}
           <li>
-            <NavLink to="/Ecommerce/cart" className="navbar-link cart-trolley--link">
+            <NavLink
+              to="/Ecommerce/cart"
+              className="navbar-link cart-trolley--link"
+            >
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>

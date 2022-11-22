@@ -207,7 +207,7 @@ const Nav = () => {
             </NavLink>
           </li>
 
-          {isAuthenticated ? (
+          {/* {isAuthenticated ? (
             <li>
               <Button
                 onClick={() => logout({ returnTo: window.location.origin })}>
@@ -218,7 +218,7 @@ const Nav = () => {
             <li>
               <Button onClick={() => loginWithRedirect()}>Log In</Button>
             </li>
-          )}
+          )} */}
           <li>
             <NavLink
               to="/Ecommerce/cart"

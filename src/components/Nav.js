@@ -10,7 +10,7 @@ import { Button } from "../styles/Button";
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout,user, isAuthenticated } = useAuth0();
 
   const Nav = styled.nav`
     .navbar-lists {
@@ -200,7 +200,7 @@ const Nav = () => {
           <li>
             <NavLink
               to="/contact"
-              className="navbar-link "
+              className="navbar-link"
               onClick={() => setMenuIcon(false)}
             >
               Contact
@@ -226,6 +226,13 @@ const Nav = () => {
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>
+          </li>
+          <li>
+            {
+              isAuthenticated && (
+                <h3 className="navbar-link">{user.name}</h3>
+              )
+            }
           </li>
         </ul>
 

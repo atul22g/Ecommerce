@@ -1,6 +1,6 @@
 {
   "name": "ecom",
-  "homepage": "https://atugatran-projects.github.io/Ecommerce/",
+  "homepage": "https://atugatran-ecommerce.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

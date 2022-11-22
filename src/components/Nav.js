@@ -172,7 +172,7 @@ const Nav = () => {
         <ul className="navbar-lists">
           <li>
             <NavLink
-              to="/Ecommerce/"
+              to="/"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
@@ -181,7 +181,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/Ecommerce/about"
+              to="/about"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
@@ -190,7 +190,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/Ecommerce/products"
+              to="/products"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
@@ -199,15 +199,14 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/Ecommerce/contact"
+              to="/contact"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
               Contact
             </NavLink>
           </li>
-
-          {/* {isAuthenticated ? (
+          {isAuthenticated ? (
             <li>
               <Button
                 onClick={() => logout({ returnTo: window.location.origin })}>
@@ -218,10 +217,10 @@ const Nav = () => {
             <li>
               <Button onClick={() => loginWithRedirect()}>Log In</Button>
             </li>
-          )} */}
+          )}
           <li>
             <NavLink
-              to="/Ecommerce/cart"
+              to="/cart"
               className="navbar-link cart-trolley--link"
             >
               <FiShoppingCart className="cart-trolley" />

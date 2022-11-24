@@ -1,5 +1,3 @@
-# Welcome to Thapa Technical React Ecommerce Webstie Series 
-
 ## Follow the 3 Steps and your good to go. 
 
 1: Clone the Project 
@@ -83,3 +81,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Deploy 
+```
+ntl init
+ntl deploy
+```

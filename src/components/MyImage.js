@@ -40,8 +40,10 @@ const Wrapper = styled.section`
     justify-items: center;
     align-items: center;
     width: 100%;
+    padding: 1rem;
     gap: 1rem;
     /* order: 2; */
+    box-shadow: ${({ theme }) => theme.colors.shadow};
 
     img {
       max-width: 100%;
@@ -49,7 +51,7 @@ const Wrapper = styled.section`
       background-size: cover;
       object-fit: contain;
       cursor: pointer;
-      box-shadow: ${({ theme }) => theme.colors.shadow};
+      ${"" /* box-shadow: ${({ theme }) => theme.colors.shadow}; */}
     }
   }
 
@@ -60,7 +62,7 @@ const Wrapper = styled.section`
     img {
       max-width: 100%;
       height: auto;
-      box-shadow: ${({ theme }) => theme.colors.shadow};
+      ${"" /* box-shadow: ${({ theme }) => theme.colors.shadow}; */}
     }
   }
   .grid-four-column {

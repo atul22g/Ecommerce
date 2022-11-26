@@ -12,14 +12,13 @@ import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
 import { useLocation } from "react-router-dom";
 
-const API = "https://api.pujakaitem.com/api/products";
+// const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get("key");
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
-  console.log(query);
   const { id } = useParams();
 
   const {
@@ -31,11 +30,11 @@ const SingleProduct = () => {
     stock,
     stars,
     reviews,
-    image,
+    images,
   } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`${API}?id=${id}`);
+    getSingleProduct(query);
   }, []);
 
   if (isSingleLoading) {
@@ -50,7 +49,7 @@ const SingleProduct = () => {
         <div className="grid grid-two-column">
           {/* product Images  */}
           <div className="product_images">
-            <MyImage imgs={image} />
+            <MyImage imgs={images} />
           </div>
 
           {/* product dAta  */}

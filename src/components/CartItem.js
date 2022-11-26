@@ -3,7 +3,7 @@ import CartAmountToggle from "./CartAmountToggle";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
-const CartItem = ({ id, name, image, color, price, amount }) => {
+const CartItem = ({ id, name, images, color, price, amount }) => {
   const { removeItem, setDecrease, setIncrement } = useCartContext();
 
   // const setDecrease = () => {
@@ -13,13 +13,14 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
   // const setIncrease = () => {
   //   amount < stock ? setAmounts(amount + 1) : setAmounts(stock);
   // };
+  // console.log(images);
 
   return (
     <div className="cart_heading grid grid-five-column">
       <div className="cart-image--name">
         <div>
           <figure>
-            <img src={image} alt={id} />
+            <img src={images} alt={id} />
           </figure>
         </div>
         <div>
@@ -28,7 +29,8 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
             <p>color:</p>
             <div
               className="color-style"
-              style={{ backgroundColor: color, color: color }}></div>
+              style={{ backgroundColor: color, color: color }}
+            ></div>
           </div>
         </div>
       </div>

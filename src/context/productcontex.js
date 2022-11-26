@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "https://api.pujakaitem.com/api/products";
+const API = "https://atugatran-projects.github.io/_Apis/Products/index.json";
 
 const initialState = {
   isLoading: false,
@@ -31,11 +31,23 @@ const AppProvider = ({ children }) => {
 
   // my 2nd api call for single product
 
-  const getSingleProduct = async (url) => {
+  const getSingleProduct = async (query) => {
+    // console.log(query);
     dispatch({ type: "SET_SINGLE_LOADING" });
+    var Single;
     try {
-      const res = await axios.get(url);
-      const singleProduct = await res.data;
+      const res = await axios.get(API);
+      const singleProducts = await res.data;
+      singleProducts.map((i) => {
+        const { id } = i;
+
+        // for (let j = -1; j < singleProduct.length; j++) {
+        let ApiId = id;
+        if (ApiId === query) {
+          Single = singleProducts[ApiId - 1];
+        }
+      });
+      const singleProduct = Single;
       dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
     } catch (error) {
       dispatch({ type: "SET_SINGLE_ERROR" });

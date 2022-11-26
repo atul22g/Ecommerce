@@ -40,7 +40,7 @@ const SingleProduct = () => {
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
   }
-  document.title = `Ecommerce | ${query}`;
+  document.title = `Ecommerce | ${name}`;
 
   return (
     <Wrapper>

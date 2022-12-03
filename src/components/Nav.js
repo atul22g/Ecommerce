@@ -10,7 +10,7 @@ import { Button } from "../styles/Button";
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
-  const { loginWithRedirect, logout,user, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
 
   const Nav = styled.nav`
     .navbar-lists {
@@ -85,6 +85,12 @@ const Nav = () => {
       padding: 0.8rem 1.4rem;
     }
 
+    .profile--img {
+      height: 30px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
       .mobile-navbar-btn {
         display: inline-block;
@@ -96,7 +102,9 @@ const Nav = () => {
           color: ${({ theme }) => theme.colors.black};
         }
       }
-
+      .profile--img {
+      height: 60px;
+    }
       .active .mobile-nav-icon {
         display: none;
         font-size: 4.2rem;
@@ -206,10 +214,11 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
-          {isAuthenticated ? (
+          {/* {isAuthenticated ? (
             <li>
               <Button
-                onClick={() => logout({ returnTo: window.location.origin })}>
+                onClick={() => logout({ returnTo: window.location.origin })}
+              >
                 Log Out
               </Button>
             </li>
@@ -217,23 +226,35 @@ const Nav = () => {
             <li>
               <Button onClick={() => loginWithRedirect()}>Log In</Button>
             </li>
-          )}
+          )} */}
           <li>
-            <NavLink
-              to="/cart"
-              className="navbar-link cart-trolley--link"
-            >
+            <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>
           </li>
-          <li>
-            {
-              isAuthenticated && (
-                <h3 className="navbar-link">{user.name}</h3>
-              )
-            }
-          </li>
+          {/* <li>
+            {isAuthenticated && <h3 className="navbar-link">{user.name}</h3>}
+          </li> */}
+          {isAuthenticated ? (
+            <li>
+              <img
+                onClick={() => logout({ returnTo: window.location.origin })}
+                src={user.picture}
+                alt={user.name}
+                className="profile--img"
+              />
+            </li>
+          ) : (
+            <li>
+              <img
+                onClick={() => loginWithRedirect()}
+                src="./images/guest.jpg"
+                alt="guest"
+                className="profile--img"
+              />
+            </li>
+          )}
         </ul>
 
         {/* two button for open and close of menu */}

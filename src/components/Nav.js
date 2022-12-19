@@ -103,8 +103,8 @@ const Nav = () => {
         }
       }
       .profile--img {
-      height: 60px;
-    }
+        height: 60px;
+      }
       .active .mobile-nav-icon {
         display: none;
         font-size: 4.2rem;
@@ -117,6 +117,8 @@ const Nav = () => {
 
       .active .close-outline {
         display: inline-block;
+        position: fixed;
+        top: 5%;
       }
 
       .navbar-lists {
@@ -146,6 +148,7 @@ const Nav = () => {
         z-index: 999;
         transform-origin: right;
         transition: all 3s linear;
+        position: fixed;
 
         .navbar-link {
           font-size: 4.2rem;

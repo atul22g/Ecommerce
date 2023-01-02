@@ -38,7 +38,7 @@ const AppProvider = ({ children }) => {
     try {
       const res = await axios.get(API);
       const singleProducts = await res.data;
-      singleProducts.map((i) => {
+      singleProducts.map(i => {
         const { id } = i;
 
         // for (let j = -1; j < singleProduct.length; j++) {

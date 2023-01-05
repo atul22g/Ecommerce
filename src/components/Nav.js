@@ -252,7 +252,7 @@ const Nav = () => {
             <li>
               <img
                 onClick={() => loginWithRedirect()}
-                src="./images/guest.jpg"
+                src="images/guest.jpg"
                 alt="guest"
                 className="profile--img"
               />

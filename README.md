@@ -36,4 +36,5 @@ ntl init
 4. deploy the website
 ```
 ntl deploy
+netlify deploy --prod
 ```

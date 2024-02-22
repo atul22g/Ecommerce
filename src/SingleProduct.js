@@ -35,6 +35,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     getSingleProduct(query);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isSingleLoading) {

@@ -3,7 +3,7 @@ Node v18.12.0
 
 1: Clone the Project
 ```
-git clone https://github.com/atugatran-projects/Ecommerce.git
+git clone https://github.com/atugatran-projects.git
 ```
 2: simply run the command
 ```

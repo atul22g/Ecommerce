@@ -183,7 +183,7 @@ const Nav = () => {
         <ul className="navbar-lists">
           <li>
             <NavLink
-              to="/Ecommerce/"
+              to="/"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
@@ -192,7 +192,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/Ecommerce/about"
+              to="/about"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
@@ -201,7 +201,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/Ecommerce/products"
+              to="/products"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}
             >
@@ -210,7 +210,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink
-              to="/Ecommerce/contact"
+              to="/contact"
               className="navbar-link"
               onClick={() => setMenuIcon(false)}
             >
@@ -231,7 +231,7 @@ const Nav = () => {
             </li>
           )} */}
           <li>
-            <NavLink to="/Ecommerce/cart" className="navbar-link cart-trolley--link">
+            <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>
@@ -252,7 +252,7 @@ const Nav = () => {
             <li>
               <img
                 onClick={() => loginWithRedirect()}
-                src="images/guest.jpg"
+                src="./images/guest.jpg"
                 alt="guest"
                 className="profile--img"
               />

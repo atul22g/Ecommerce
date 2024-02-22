@@ -38,10 +38,9 @@ const AppProvider = ({ children }) => {
     try {
       const res = await axios.get(API);
       const singleProducts = await res.data;
-      singleProducts.map(i => {
-        const { id } = i;
-
-        // for (let j = -1; j < singleProduct.length; j++) {
+      // eslint-disable-next-line array-callback-return
+      singleProducts.map((item) => {
+        const { id } = item;
         let ApiId = id;
         if (ApiId === query) {
           Single = singleProducts[ApiId - 1];
